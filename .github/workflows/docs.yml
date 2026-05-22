@@ -3,18 +3,41 @@ name: Docs
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
       - uses: actions/setup-python@v5
-      - run: |
-          python3 -m pydoc -w calculadora gestio_llibres validacions
+        with:
+          python-version: '3.11'
+      
+      - name: Generar HTML
+        run: |
+          python3 -m pydoc -w calculadora gestio_libres validacions
           mkdir -p docs
           mv *.html docs/
-      - uses: peaceiris/actions-gh-pages@v4
+          echo '<!DOCTYPE html>
+          <html>
+          <head><title>Documentacio</title></head>
+          <body>
+          <h1>Documentacio</h1>
+          <ul>
+          <li><a href="calculadora.html">calculadora</a></li>
+          <li><a href="gestio_libres.html">gestio_libres</a></li>
+          <li><a href="validacions.html">validacions</a></li>
+          </ul>
+          </body>
+          </html>' > docs/index.html
+      
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
