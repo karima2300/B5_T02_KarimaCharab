@@ -24,3 +24,7 @@ Per tant, l'única dependència necessària és tenir Python 3 instal·lat al si
 ```bash
 git clone https://github.com/karima2300/B5_T02_KarimaCharab.git
 cd B5_T02_KarimaCharab
+
+### Documentació del codi (Enllaç)
+[https://karima2300.github.io/B5_T02_KarimaCharab/](https://karima2300.github.io/B5_T02_KarimaCharab/)
+
