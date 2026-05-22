@@ -19,7 +19,7 @@ Aquest projecte no requereix cap procés d'instal·lació addicional perquè uti
 Per tant, l'única dependència necessària és tenir Python 3 instal·lat al sistema, que és el requisit mínim per executar qualsevol script Python.
 
 
-![### Enllaç que porta als HTMLs] (https://karima2300.github.io/B5_T02_KarimaCharab)
+[ Enllaç que porta als HTMLs] (https://karima2300.github.io/B5_T02_KarimaCharab)
 ### Clonar el repositori
 
 ```bash
