@@ -2,61 +2,85 @@ name: Generar documentació amb Pydoc
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
   generate-docs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     
     steps:
-    - name: Clonar repositori
-      uses: actions/checkout@v4
-    
-    - name: Configurar Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.11'
-    
-    - name: Generar documentació HTML
-      run: |
-        python3 -m pydoc -w calculadora
-        python3 -m pydoc -w gestio_llibre
-        python3 -m pydoc -w validacions
-        mkdir -p docs
-        mv *.html docs/
-        echo '<!DOCTYPE html>
-        <html>
-        <head>
-            <title>Documentació - Projecte Python</title>
-            <style>
-                body { font-family: Arial, sans-serif; margin: 40px; background: #f0f0f0; }
-                .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 10px; }
-                h1 { color: #44B78B; }
-                ul { list-style: none; padding: 0; }
-                li { margin: 10px 0; padding: 10px; background: #f8f9fa; border-radius: 5px; }
-                a { text-decoration: none; color: #0066cc; font-size: 1.1em; }
-                a:hover { color: #44B78B; }
-            </style>
-        </head>
-        <body>
-        <div class="container">
-            <h1>📚 Documentació del Projecte</h1>
-            <p>Projecte B5_T02_KarimaCharab</p>
-            <ul>
-                <li><a href="calculadora.html">📐 calculadora.py</a></li>
-                <li><a href="gestio_llibre.html">📖 gestio_llibre.py</a></li>
-                <li><a href="validacions.html">✅ validacions.py</a></li>
-            </ul>
-            <hr>
-            <p><small>Documentació generada automàticament amb Pydoc</small></p>
-        </div>
-        </body>
-        </html>' > docs/index.html
-    
-    - name: Publicar a GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs
-        publish_branch: gh-pages
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Generar documentació HTML
+        run: |
+          # Genera documentació per tots els fitxers .py
+          for fitxer in *.py; do
+            if [ -f "$fitxer" ]; then
+              nom=$(basename "$fitxer" .py)
+              echo "Generant: $nom"
+              python3 -m pydoc -w "$nom"
+            fi
+          done
+          
+          # Crea carpeta docs
+          mkdir -p docs
+          
+          # Mou els HTML a docs
+          mv *.html docs/ 2>/dev/null || true
+          
+          # Crea index.html
+          cat > docs/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <meta charset="UTF-8">
+              <title>Documentació - Projecte Python</title>
+              <style>
+                  body { font-family: Arial, sans-serif; margin: 40px; background: #f0f0f0; }
+                  .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 10px; }
+                  h1 { color: #44B78B; }
+                  ul { list-style: none; padding: 0; }
+                  li { margin: 10px 0; padding: 10px; background: #f8f9fa; border-radius: 5px; }
+                  a { text-decoration: none; color: #0066cc; font-size: 1.1em; }
+              </style>
+          </head>
+          <body>
+          <div class="container">
+              <h1>📚 Documentació del Projecte</h1>
+              <p>Projecte B5_T02_KarimaCharab</p>
+              <ul>
+                  <li><a href="calculadora.html">📐 calculadora.py</a></li>
+                  <li><a href="gestio_llibre.html">📖 gestio_llibre.py</a></li>
+                  <li><a href="validacions.html">✅ validacions.py</a></li>
+              </ul>
+              <hr>
+              <p><small>Documentació generada automàticament amb Pydoc</small></p>
+          </div>
+          </body>
+          </html>
+          EOF
+      
+      - name: Desplegar a GitHub Pages
+        run: |
+          # Configura git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Canvia al branch gh-pages (o el crea)
+          git checkout gh-pages 2>/dev/null || git checkout --orphan gh-pages
+          
+          # Neteja i copia els docs
+          rm -rf *
+          cp -r docs/* .
+          
+          # Commit i push
+          git add .
+          git commit -m "Actualització automàtica de la documentació" || echo "No hi ha canvis"
+          git push origin gh-pages --force
