@@ -20,7 +20,7 @@ jobs:
       
       - name: Generar HTML
         run: |
-          python3 -m pydoc -w calculadora gestio_libres validacions
+          python3 -m pydoc -w calculadora gestio_llibres validacions
           mkdir -p docs
           mv *.html docs/
           echo '<!DOCTYPE html>
