@@ -21,7 +21,7 @@ jobs:
 
     - name: Generar documentació HTML
       run: |
-        python3 -m pydoc -w calculadora gestio_libres validacions
+        python3 -m pydoc -w calculadora gestio_llibres validacions
         mkdir -p docs
 
     - name: Moure HTML a la carpeta docs
@@ -47,7 +47,7 @@ jobs:
         <h1>📚 Documentació del Projecte</h1>
         <ul>
         <li><a href="calculadora.html">calculadora.py</a></li>
-        <li><a href="gestio_libres.html">gestio_libres.py</a></li>
+        <li><a href="gestio_llibres.html">gestio_llibres.py</a></li>
         <li><a href="validacions.html">validacions.py</a></li>
         </ul>
         </div>
