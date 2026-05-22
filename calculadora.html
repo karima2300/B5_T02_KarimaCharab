@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module calculadora</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">calculadora</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/runner/work/B5_T02_KarimaCharab/B5_T02_KarimaCharab/calculadora.py">/home/runner/work/B5_T02_KarimaCharab/B5_T02_KarimaCharab/calculadora.py</a></td></tr></table>
+    <p><span class="code">Mòdul&nbsp;calculadora:&nbsp;Proporciona&nbsp;funcions&nbsp;matemàtiques&nbsp;bàsiques.<br>
+&nbsp;<br>
+Aquest&nbsp;mòdul&nbsp;conté&nbsp;funcions&nbsp;per&nbsp;realitzar&nbsp;operacions&nbsp;aritmètiques<br>
+com&nbsp;ara&nbsp;suma,&nbsp;resta,&nbsp;multiplicació,&nbsp;divisió&nbsp;i&nbsp;potència.</span></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="calculadora.html#Calculadora">Calculadora</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Calculadora">class <strong>Calculadora</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Classe&nbsp;<a href="#Calculadora">Calculadora</a>&nbsp;que&nbsp;encapsula&nbsp;les&nbsp;operacions&nbsp;matemàtiques.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;historial&nbsp;(list):&nbsp;Llista&nbsp;que&nbsp;emmagatzema&nbsp;les&nbsp;operacions&nbsp;realitzades<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Calculadora-__init__"><strong>__init__</strong></a>(self)</dt><dd><span class="code">Inicialitza&nbsp;una&nbsp;nova&nbsp;calculadora&nbsp;amb&nbsp;l'historial&nbsp;buit.</span></dd></dl>
+
+<dl><dt><a name="Calculadora-afegir_operacio"><strong>afegir_operacio</strong></a>(self, operacio, resultat)</dt><dd><span class="code">Afegeix&nbsp;una&nbsp;operació&nbsp;a&nbsp;l'historial.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;operacio&nbsp;(str):&nbsp;Descripció&nbsp;de&nbsp;l'operació&nbsp;realitzada<br>
+&nbsp;&nbsp;&nbsp;&nbsp;resultat&nbsp;(float):&nbsp;Resultat&nbsp;de&nbsp;l'operació</span></dd></dl>
+
+<dl><dt><a name="Calculadora-mostrar_historial"><strong>mostrar_historial</strong></a>(self)</dt><dd><span class="code">Retorna&nbsp;l'historial&nbsp;complet&nbsp;d'operacions.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list:&nbsp;Llista&nbsp;de&nbsp;diccionaris&nbsp;amb&nbsp;l'historial&nbsp;d'operacions</span></dd></dl>
+
+<dl><dt><a name="Calculadora-netejar_historial"><strong>netejar_historial</strong></a>(self)</dt><dd><span class="code">Neteja&nbsp;tot&nbsp;l'historial&nbsp;d'operacions.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-dividir"><strong>dividir</strong></a>(a, b)</dt><dd><span class="code">Retorna&nbsp;la&nbsp;divisió&nbsp;de&nbsp;dos&nbsp;números.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;(float):&nbsp;Numerador<br>
+&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;(float):&nbsp;Denominador<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float:&nbsp;La&nbsp;divisió&nbsp;de&nbsp;a&nbsp;entre&nbsp;b<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;Si&nbsp;b&nbsp;és&nbsp;zero<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;<a href="#-dividir">dividir</a>(10,&nbsp;2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;5.0</span></dd></dl>
+ <dl><dt><a name="-multiplicar"><strong>multiplicar</strong></a>(a, b)</dt><dd><span class="code">Retorna&nbsp;la&nbsp;multiplicació&nbsp;de&nbsp;dos&nbsp;números.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;(float):&nbsp;Primer&nbsp;número<br>
+&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;(float):&nbsp;Segon&nbsp;número<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float:&nbsp;El&nbsp;producte&nbsp;de&nbsp;a&nbsp;i&nbsp;b<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;<a href="#-multiplicar">multiplicar</a>(4,&nbsp;5)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;20</span></dd></dl>
+ <dl><dt><a name="-potencia"><strong>potencia</strong></a>(base, exponent)</dt><dd><span class="code">Retorna&nbsp;la&nbsp;potència&nbsp;d'un&nbsp;número.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;base&nbsp;(float):&nbsp;Número&nbsp;base<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exponent&nbsp;(float):&nbsp;Exponent<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float:&nbsp;base&nbsp;elevat&nbsp;a&nbsp;exponent<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;<a href="#-potencia">potencia</a>(2,&nbsp;3)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;8</span></dd></dl>
+ <dl><dt><a name="-restar"><strong>restar</strong></a>(a, b)</dt><dd><span class="code">Retorna&nbsp;la&nbsp;resta&nbsp;de&nbsp;dos&nbsp;números.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;(float):&nbsp;Primer&nbsp;número<br>
+&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;(float):&nbsp;Segon&nbsp;número<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float:&nbsp;La&nbsp;resta&nbsp;de&nbsp;a&nbsp;i&nbsp;b&nbsp;(a&nbsp;-&nbsp;b)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;<a href="#-restar">restar</a>(10,&nbsp;4)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;6</span></dd></dl>
+ <dl><dt><a name="-sumar"><strong>sumar</strong></a>(a, b)</dt><dd><span class="code">Retorna&nbsp;la&nbsp;suma&nbsp;de&nbsp;dos&nbsp;números.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;(float):&nbsp;Primer&nbsp;número<br>
+&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;(float):&nbsp;Segon&nbsp;número<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float:&nbsp;La&nbsp;suma&nbsp;de&nbsp;a&nbsp;i&nbsp;b<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;<a href="#-sumar">sumar</a>(5,&nbsp;3)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;8</span></dd></dl>
+</td></tr></table>
+</body></html>

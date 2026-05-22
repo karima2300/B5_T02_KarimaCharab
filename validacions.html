@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module validacions</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">validacions</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/runner/work/B5_T02_KarimaCharab/B5_T02_KarimaCharab/validacions.py">/home/runner/work/B5_T02_KarimaCharab/B5_T02_KarimaCharab/validacions.py</a></td></tr></table>
+    <p><span class="code">Mòdul&nbsp;de&nbsp;validacions:&nbsp;Funcions&nbsp;per&nbsp;validar&nbsp;diferents&nbsp;tipus&nbsp;de&nbsp;dades.<br>
+&nbsp;<br>
+Aquest&nbsp;mòdul&nbsp;conté&nbsp;funcions&nbsp;per&nbsp;validar&nbsp;emails,&nbsp;telèfons,<br>
+DNIs,&nbsp;contrasenyes&nbsp;i&nbsp;altres&nbsp;dades&nbsp;comunes.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="re.html">re</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="validacions.html#Validador">Validador</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Validador">class <strong>Validador</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Classe&nbsp;que&nbsp;agrupa&nbsp;tots&nbsp;els&nbsp;mètodes&nbsp;de&nbsp;validació.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Static methods defined here:<br>
+<dl><dt><a name="Validador-validar_tot"><strong>validar_tot</strong></a>(dades)</dt><dd><span class="code">Valida&nbsp;múltiples&nbsp;camps&nbsp;a&nbsp;la&nbsp;vegada.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dades&nbsp;(dict):&nbsp;Diccionari&nbsp;amb&nbsp;les&nbsp;dades&nbsp;a&nbsp;validar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Claus&nbsp;possibles:&nbsp;email,&nbsp;telefon,&nbsp;dni,&nbsp;contrasenya<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dict:&nbsp;Diccionari&nbsp;amb&nbsp;els&nbsp;resultats&nbsp;de&nbsp;cada&nbsp;validació</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-validar_codi_postal"><strong>validar_codi_postal</strong></a>(codi_postal)</dt><dd><span class="code">Valida&nbsp;si&nbsp;un&nbsp;codi&nbsp;postal&nbsp;espanyol&nbsp;és&nbsp;correcte&nbsp;(5&nbsp;dígits).<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;codi_postal&nbsp;(str):&nbsp;Codi&nbsp;postal&nbsp;a&nbsp;validar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;si&nbsp;el&nbsp;codi&nbsp;postal&nbsp;és&nbsp;vàlid,&nbsp;False&nbsp;en&nbsp;cas&nbsp;contrari</span></dd></dl>
+ <dl><dt><a name="-validar_contrasenya"><strong>validar_contrasenya</strong></a>(contrasenya)</dt><dd><span class="code">Valida&nbsp;si&nbsp;una&nbsp;contrasenya&nbsp;és&nbsp;prou&nbsp;forta.<br>
+Requereix:&nbsp;mínim&nbsp;8&nbsp;caràcters,&nbsp;una&nbsp;majúscula,&nbsp;una&nbsp;minúscula,&nbsp;un&nbsp;número.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;contrasenya&nbsp;(str):&nbsp;Contrasenya&nbsp;a&nbsp;validar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dict:&nbsp;Diccionari&nbsp;amb&nbsp;el&nbsp;resultat&nbsp;de&nbsp;la&nbsp;validació<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;<a href="#-validar_contrasenya">validar_contrasenya</a>("Password123")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{'valida':&nbsp;True,&nbsp;'errors':&nbsp;[]}</span></dd></dl>
+ <dl><dt><a name="-validar_data"><strong>validar_data</strong></a>(data_str, format_data='%Y-%m-%d')</dt><dd><span class="code">Valida&nbsp;si&nbsp;una&nbsp;data&nbsp;té&nbsp;el&nbsp;format&nbsp;correcte.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data_str&nbsp;(str):&nbsp;Data&nbsp;en&nbsp;format&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;format_data&nbsp;(str):&nbsp;Format&nbsp;esperat&nbsp;(default:&nbsp;'%Y-%m-%d')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;si&nbsp;la&nbsp;data&nbsp;és&nbsp;vàlida,&nbsp;False&nbsp;en&nbsp;cas&nbsp;contrari<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;<a href="#-validar_data">validar_data</a>("2024-12-25")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;True<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;<a href="#-validar_data">validar_data</a>("25/12/2024",&nbsp;"%d/%m/%Y")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;True</span></dd></dl>
+ <dl><dt><a name="-validar_dni"><strong>validar_dni</strong></a>(dni)</dt><dd><span class="code">Valida&nbsp;si&nbsp;un&nbsp;DNI&nbsp;espanyol&nbsp;és&nbsp;correcte.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dni&nbsp;(str):&nbsp;DNI&nbsp;a&nbsp;validar&nbsp;(8&nbsp;números&nbsp;+&nbsp;lletra)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;si&nbsp;el&nbsp;DNI&nbsp;és&nbsp;vàlid,&nbsp;False&nbsp;en&nbsp;cas&nbsp;contrari<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;<a href="#-validar_dni">validar_dni</a>("12345678Z")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;True</span></dd></dl>
+ <dl><dt><a name="-validar_email"><strong>validar_email</strong></a>(email)</dt><dd><span class="code">Valida&nbsp;si&nbsp;un&nbsp;email&nbsp;té&nbsp;el&nbsp;format&nbsp;correcte.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;email&nbsp;(str):&nbsp;Adreça&nbsp;de&nbsp;correu&nbsp;electrònic&nbsp;a&nbsp;validar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;si&nbsp;l'email&nbsp;és&nbsp;vàlid,&nbsp;False&nbsp;en&nbsp;cas&nbsp;contrari<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;<a href="#-validar_email">validar_email</a>("usuari@example.com")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;True<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;<a href="#-validar_email">validar_email</a>("email_invalid")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;False</span></dd></dl>
+ <dl><dt><a name="-validar_telefon"><strong>validar_telefon</strong></a>(telefon)</dt><dd><span class="code">Valida&nbsp;si&nbsp;un&nbsp;número&nbsp;de&nbsp;telèfon&nbsp;té&nbsp;el&nbsp;format&nbsp;correcte.<br>
+Accepta&nbsp;formats&nbsp;amb&nbsp;codi&nbsp;de&nbsp;país&nbsp;o&nbsp;sense.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;telefon&nbsp;(str):&nbsp;Número&nbsp;de&nbsp;telèfon&nbsp;a&nbsp;validar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;si&nbsp;el&nbsp;telèfon&nbsp;és&nbsp;vàlid,&nbsp;False&nbsp;en&nbsp;cas&nbsp;contrari<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;<a href="#-validar_telefon">validar_telefon</a>("612345678")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;True<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;<a href="#-validar_telefon">validar_telefon</a>("+34612345678")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;True</span></dd></dl>
+</td></tr></table>
+</body></html>
