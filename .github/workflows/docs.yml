@@ -1,43 +1,63 @@
-name: Docs
+name: Generar documentació amb Pydoc
 
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
-  build:
+  generate-docs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
-      - uses: actions/checkout@v4
-      
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      
-      - name: Generar HTML
-        run: |
-          python3 -m pydoc -w calculadora gestio_llibres validacions
-          mkdir -p docs
-          mv *.html docs/
-          echo '<!DOCTYPE html>
-          <html>
-          <head><title>Documentacio</title></head>
-          <body>
-          <h1>Documentacio</h1>
-          <ul>
-          <li><a href="calculadora.html">calculadora</a></li>
-          <li><a href="gestio_llibres.html">gestio_llibres</a></li>
-          <li><a href="validacions.html">validacions</a></li>
-          </ul>
-          </body>
-          </html>' > docs/index.html
-      
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+    - uses: actions/checkout@v4
+
+    - name: Configurar Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Generar documentació HTML
+      run: |
+        python3 -m pydoc -w calculadora gestio_libres validacions
+        mkdir -p docs
+
+    - name: Moure HTML a la carpeta docs
+      run: |
+        mv *.html docs/ || true
+
+    - name: Crear index.html
+      run: |
+        echo '<!DOCTYPE html>
+        <html>
+        <head><title>Documentacio</title>
+        <style>
+          body { font-family: Arial, sans-serif; margin: 40px; background: #f0f0f0; }
+          .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 10px; }
+          h1 { color: #44B78B; }
+          ul { list-style: none; padding: 0; }
+          li { margin: 10px 0; padding: 10px; background: #f8f9fa; border-radius: 5px; }
+          a { text-decoration: none; color: #0066cc; font-size: 1.1em; }
+        </style>
+        </head>
+        <body>
+        <div class="container">
+        <h1>📚 Documentació del Projecte</h1>
+        <ul>
+        <li><a href="calculadora.html">calculadora.py</a></li>
+        <li><a href="gestio_libres.html">gestio_libres.py</a></li>
+        <li><a href="validacions.html">validacions.py</a></li>
+        </ul>
+        </div>
+        </body>
+        </html>' > docs/index.html
+
+    - name: Pujar els fitxers HTML al repositori
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add docs/
+        git commit -m "Actualitzar documentació HTML $(date +'%Y-%m-%d %H:%M')" || echo "No hi ha canvis per cometre"
+        git push
