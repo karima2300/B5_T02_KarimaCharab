@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module gestio_llibres</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">gestio_llibres</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/runner/work/B5_T02_KarimaCharab/B5_T02_KarimaCharab/gestio_llibres.py">/home/runner/work/B5_T02_KarimaCharab/B5_T02_KarimaCharab/gestio_llibres.py</a></td></tr></table>
+    <p><span class="code">Mòdul&nbsp;de&nbsp;gestió&nbsp;de&nbsp;llibres:&nbsp;Permet&nbsp;gestionar&nbsp;una&nbsp;col·lecció&nbsp;de&nbsp;llibres.<br>
+&nbsp;<br>
+Aquest&nbsp;mòdul&nbsp;proporciona&nbsp;classes&nbsp;i&nbsp;funcions&nbsp;per&nbsp;gestionar<br>
+una&nbsp;biblioteca&nbsp;de&nbsp;llibres&nbsp;amb&nbsp;operacions&nbsp;CRUD.</span></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="gestio_llibres.html#Biblioteca">Biblioteca</a>
+</dt><dt class="heading-text"><a href="gestio_llibres.html#Llibre">Llibre</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Biblioteca">class <strong>Biblioteca</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Biblioteca">Biblioteca</a>(nom)<br>
+&nbsp;<br>
+Classe&nbsp;que&nbsp;representa&nbsp;una&nbsp;biblioteca&nbsp;amb&nbsp;col·lecció&nbsp;de&nbsp;llibres.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nom&nbsp;(str):&nbsp;Nom&nbsp;de&nbsp;la&nbsp;biblioteca<br>
+&nbsp;&nbsp;&nbsp;&nbsp;llibres&nbsp;(list):&nbsp;Llista&nbsp;de&nbsp;llibres&nbsp;de&nbsp;la&nbsp;biblioteca<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Biblioteca-__init__"><strong>__init__</strong></a>(self, nom)</dt><dd><span class="code">Inicialitza&nbsp;una&nbsp;nova&nbsp;biblioteca.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nom&nbsp;(str):&nbsp;Nom&nbsp;de&nbsp;la&nbsp;biblioteca</span></dd></dl>
+
+<dl><dt><a name="Biblioteca-afegir_llibre"><strong>afegir_llibre</strong></a>(self, llibre)</dt><dd><span class="code">Afegeix&nbsp;un&nbsp;llibre&nbsp;a&nbsp;la&nbsp;biblioteca.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;llibre&nbsp;(<a href="#Llibre">Llibre</a>):&nbsp;<a href="#Llibre">Llibre</a>&nbsp;a&nbsp;afegir<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;si&nbsp;s'ha&nbsp;afegit&nbsp;correctament</span></dd></dl>
+
+<dl><dt><a name="Biblioteca-cercar_per_autor"><strong>cercar_per_autor</strong></a>(self, autor)</dt><dd><span class="code">Cerca&nbsp;llibres&nbsp;per&nbsp;autor.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;autor&nbsp;(str):&nbsp;Autor&nbsp;a&nbsp;cercar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list:&nbsp;Llista&nbsp;de&nbsp;llibres&nbsp;de&nbsp;l'autor</span></dd></dl>
+
+<dl><dt><a name="Biblioteca-cercar_per_titol"><strong>cercar_per_titol</strong></a>(self, titol)</dt><dd><span class="code">Cerca&nbsp;llibres&nbsp;per&nbsp;títol.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;titol&nbsp;(str):&nbsp;Títol&nbsp;a&nbsp;cercar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list:&nbsp;Llista&nbsp;de&nbsp;llibres&nbsp;que&nbsp;coincideixen</span></dd></dl>
+
+<dl><dt><a name="Biblioteca-eliminar_llibre"><strong>eliminar_llibre</strong></a>(self, isbn)</dt><dd><span class="code">Elimina&nbsp;un&nbsp;llibre&nbsp;per&nbsp;ISBN.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;isbn&nbsp;(str):&nbsp;ISBN&nbsp;del&nbsp;llibre&nbsp;a&nbsp;eliminar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;si&nbsp;s'ha&nbsp;eliminat,&nbsp;False&nbsp;si&nbsp;no&nbsp;s'ha&nbsp;trobat</span></dd></dl>
+
+<dl><dt><a name="Biblioteca-llistar_llibres_disponibles"><strong>llistar_llibres_disponibles</strong></a>(self)</dt><dd><span class="code">Llista&nbsp;tots&nbsp;els&nbsp;llibres&nbsp;disponibles.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list:&nbsp;Llista&nbsp;de&nbsp;llibres&nbsp;disponibles</span></dd></dl>
+
+<dl><dt><a name="Biblioteca-obtenir_total_llibres"><strong>obtenir_total_llibres</strong></a>(self)</dt><dd><span class="code">Retorna&nbsp;el&nbsp;nombre&nbsp;total&nbsp;de&nbsp;llibres.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int:&nbsp;Nombre&nbsp;de&nbsp;llibres&nbsp;a&nbsp;la&nbsp;biblioteca</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Llibre">class <strong>Llibre</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Llibre">Llibre</a>(titol,&nbsp;autor,&nbsp;any,&nbsp;isbn)<br>
+&nbsp;<br>
+Classe&nbsp;que&nbsp;representa&nbsp;un&nbsp;llibre.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;titol&nbsp;(str):&nbsp;Títol&nbsp;del&nbsp;llibre<br>
+&nbsp;&nbsp;&nbsp;&nbsp;autor&nbsp;(str):&nbsp;Autor&nbsp;del&nbsp;llibre<br>
+&nbsp;&nbsp;&nbsp;&nbsp;any&nbsp;(int):&nbsp;Any&nbsp;de&nbsp;publicació<br>
+&nbsp;&nbsp;&nbsp;&nbsp;isbn&nbsp;(str):&nbsp;Codi&nbsp;ISBN&nbsp;del&nbsp;llibre<br>
+&nbsp;&nbsp;&nbsp;&nbsp;disponible&nbsp;(bool):&nbsp;Indica&nbsp;si&nbsp;el&nbsp;llibre&nbsp;està&nbsp;disponible<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Llibre-__init__"><strong>__init__</strong></a>(self, titol, autor, any, isbn)</dt><dd><span class="code">Inicialitza&nbsp;un&nbsp;nou&nbsp;llibre.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;titol&nbsp;(str):&nbsp;Títol&nbsp;del&nbsp;llibre<br>
+&nbsp;&nbsp;&nbsp;&nbsp;autor&nbsp;(str):&nbsp;Autor&nbsp;del&nbsp;llibre<br>
+&nbsp;&nbsp;&nbsp;&nbsp;any&nbsp;(int):&nbsp;Any&nbsp;de&nbsp;publicació<br>
+&nbsp;&nbsp;&nbsp;&nbsp;isbn&nbsp;(str):&nbsp;Codi&nbsp;ISBN&nbsp;del&nbsp;llibre</span></dd></dl>
+
+<dl><dt><a name="Llibre-__str__"><strong>__str__</strong></a>(self)</dt><dd><span class="code">Retorna&nbsp;una&nbsp;representació&nbsp;en&nbsp;string&nbsp;del&nbsp;llibre.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;Representació&nbsp;del&nbsp;llibre</span></dd></dl>
+
+<dl><dt><a name="Llibre-obtenir_info"><strong>obtenir_info</strong></a>(self)</dt><dd><span class="code">Obté&nbsp;tota&nbsp;la&nbsp;informació&nbsp;del&nbsp;llibre.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dict:&nbsp;Diccionari&nbsp;amb&nbsp;les&nbsp;dades&nbsp;del&nbsp;llibre</span></dd></dl>
+
+<dl><dt><a name="Llibre-prestar"><strong>prestar</strong></a>(self)</dt><dd><span class="code">Marca&nbsp;el&nbsp;llibre&nbsp;com&nbsp;a&nbsp;prestat.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;si&nbsp;s'ha&nbsp;pogut&nbsp;prestar,&nbsp;False&nbsp;si&nbsp;no&nbsp;estava&nbsp;disponible</span></dd></dl>
+
+<dl><dt><a name="Llibre-retornar"><strong>retornar</strong></a>(self)</dt><dd><span class="code">Marca&nbsp;el&nbsp;llibre&nbsp;com&nbsp;a&nbsp;disponible.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
