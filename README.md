@@ -26,6 +26,9 @@ git clone https://github.com/karima2300/B5_T02_KarimaCharab.git
 cd B5_T02_KarimaCharab
 
 ### Enllaç que porta als HTMLs
+<p align="center" width="100%">
+    <img width="25%" src="(https://karima2300.github.io/B5_T02_KarimaCharab).md/images/logos/editormd-logo-180x180.png">
+</p>
 ![] (https://karima2300.github.io/B5_T02_KarimaCharab)
 
 
