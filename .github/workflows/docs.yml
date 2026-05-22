@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
       - run: |
-          python3 -m pydoc -w calculadora gestio_llibre validacions
+          python3 -m pydoc -w calculadora gestio_llibres validacions
           mkdir -p docs
           mv *.html docs/
       - uses: peaceiris/actions-gh-pages@v4
